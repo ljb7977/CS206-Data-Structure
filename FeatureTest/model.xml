@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+	<featureModel>
+		<properties/>
+		<struct>
+			<and abstract="true" mandatory="true" name="FeatureTest">
+				<or abstract="true" mandatory="true" name="Base">
+					<feature mandatory="true" name="NewFeature11"/>
+					<feature mandatory="true" name="NewFeature12"/>
+					<feature mandatory="true" name="NewFeature13"/>
+				</or>
+				<and mandatory="true" name="NewFeature1">
+					<alt name="NewFeature2">
+						<feature mandatory="true" name="NewFeature5"/>
+						<feature mandatory="true" name="NewFeature6"/>
+					</alt>
+					<alt abstract="true" name="NewFeature4">
+						<feature mandatory="true" name="NewFeature7"/>
+						<feature mandatory="true" name="NewFeature8"/>
+					</alt>
+				</and>
+				<alt abstract="true" name="NewFeature3">
+					<feature mandatory="true" name="NewFeature9"/>
+					<feature mandatory="true" name="NewFeature10"/>
+				</alt>
+			</and>
+		</struct>
+		<constraints>
+			<rule>
+				<imp>
+					<var>NewFeature12</var>
+					<conj>
+						<var>NewFeature6</var>
+						<var>NewFeature3</var>
+					</conj>
+				</imp>
+			</rule>
+			<rule>
+				<imp>
+					<var>NewFeature13</var>
+					<conj>
+						<var>NewFeature2</var>
+						<var>NewFeature10</var>
+					</conj>
+				</imp>
+			</rule>
+			<rule>
+				<imp>
+					<var>NewFeature11</var>
+					<conj>
+						<var>NewFeature5</var>
+						<var>NewFeature7</var>
+					</conj>
+				</imp>
+			</rule>
+		</constraints>
+		<calculations Auto="true" Constraints="true" Features="true" Redundant="true" Tautology="true"/>
+		<comments/>
+		<featureOrder userDefined="false"/>
+	</featureModel>
